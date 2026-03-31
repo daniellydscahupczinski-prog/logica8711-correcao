@@ -3,10 +3,10 @@
 int main (){
 
   int a = 10;
-  int b = 3;
-
-  std::cout<<(a % b)<<std::endl;
-  std::cout<<(a / b)<<std::endl;
+  
+  std::cout<<++a<<std::endl;
+  //adicionar mais um numero ao que foi rodado (10+1=11+1=12)
+  std::cout<<++a<<std::endl;
 
     return 0;
 }
