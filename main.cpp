@@ -1,24 +1,13 @@
 #include<iostream>
 
 int main (){
-  
-int a;
-int b;
-//int a, b;
 
-  std::cout<<"Digite um valor para A: "<<std::endl;
-  std::cin>>a;
+  int soma1 = 100 + 50;
+  int soma2 = soma1 + 50;
+  int soma3 = soma2 + 100;
 
-  std::cout<<"Digite um valor para B: "<<std::endl;
-  std::cin>>b;
+  std::cout<<soma2<<std::endl;
+  std::cout<<soma3<<std::endl;
 
-  std::cout<<(a > b)<<std::endl;
-  //maior que...
-  std::cout<<(a >= b)<<std::endl;
-  //maior ou igual a...
-  std::cout<<( a != b)<<std::endl;
-  //diferente de...
-  std::cout<<(a ==b)<<std::endl;
-  //igual a...
     return 0;
 }
