@@ -3,9 +3,13 @@
 
 int main (){
 
-  int Danielly[5] = {10,20,30,40,50};
+  std::string nome = "Danielly";
 
-  std::cout<<Danielly[1];
+  std::cout<<nome[0]<<std::endl;
+  std::cout<<nome[2]<<std::endl;
+  std::cout<<nome[nome.length() - 1]<<std::endl;
+  nome[0] = 'D';
+  std::cout<<nome<<std::endl;
 
     return 0;
 }
