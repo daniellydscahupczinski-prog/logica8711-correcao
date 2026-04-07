@@ -3,10 +3,9 @@
 
 int main (){
 
-  std::string nome = "Danielly";
+  int Danielly[5] = {10,20,30,40,50};
 
-  std::cout<<"Nome tem: "<<nome.length()<<" Letras."<<std::endl;
-  std::cout<<"Nome tem: "<<nome.size()<<" Letras."<<std::endl;
+  std::cout<<Danielly[1];
 
     return 0;
 }
