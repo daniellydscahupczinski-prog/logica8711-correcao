@@ -3,10 +3,10 @@
 
 int main (){
 
-  int a = 40;
-  std::string d = "10";
+  std::string nome = "Danielly";
 
-  std::cout<<a+d<<std::endl;
+  std::cout<<"Nome tem: "<<nome.length()<<" Letras."<<std::endl;
+  std::cout<<"Nome tem: "<<nome.size()<<" Letras."<<std::endl;
 
     return 0;
 }
