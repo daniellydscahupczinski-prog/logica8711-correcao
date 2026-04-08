@@ -1,18 +1,14 @@
 #include<iostream>
-#include<string>
+#include<cmath>
 
 int main (){
 
-  std::string nome = "Danielly";
-
-  std::cout<<nome[0]<<std::endl;
-  std::cout<<nome[2]<<std::endl;
-  std::cout<<nome[nome.length() - 1]<<std::endl;
-  nome[0] = 'D';
-  std::cout<<nome<<std::endl;
-  std::cout<<nome.at(0)<<std::endl;
-  nome.at(0) = 'H';
-  std::cout<<nome;
+  int a = 5;
+  int b = 3;
   
+
+  std::cout<<std::min(a, b)<<std::endl;
+  std::cout<<std::max(a, b)<<std::endl;
+
     return 0;
 }
