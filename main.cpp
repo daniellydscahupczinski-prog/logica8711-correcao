@@ -1,16 +1,23 @@
 #include<iostream>
 #include<cmath>
+#include<string>
 
 int main (){
+  std::string user;
+  std::string senha;
 
-  int a = 5;
-  int b = 2;
+  std::cout<<"Digite seu usuário de acesso: "<<std::endl;
+  std::cin>>user;
 
-  if(a > b){
-    std::cout<<"A é maior que B."<<std::endl;
+  std::cout<<"Digite sua senha: "<<std::endl;
+  std::cin>>senha;
+
+  if(senha == "2891a007"){
+    std::cout<<"O usuário "<<user<<" esta logado com sucesso!!"<<std::endl;
   }else{
-    std::cout<<"B é maior ou igual que A."<<std::endl;
+    std::cout<<"Usuário ou senha inválidos!"<<std::endl;
   }
 
+  
     return 0;
 }
