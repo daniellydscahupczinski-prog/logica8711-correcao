@@ -1,15 +1,14 @@
 #include <iostream>
-#include <cstdlib>
-#include <ctime>
+#include <vector>
 
 int main() {
-    int numero, tentativa;
+    
+    std::vector<std::string>cars = {"Volvo", "BMW", "Mercedes"};
 
-    for(int i = 0; i < 10; i++){
-        if(i == 4){
-            break;
-        }
-        std::cout<<i<<std::endl;
+    cars.push_back("Mazda");
+
+    for(std::string car : cars){
+        std::cout<<car<<std::endl;
     }
     return 0;
 }
