@@ -1,14 +1,14 @@
 #include <iostream>
-#include<string>
-    
-    void minhafuncao(std::string nome){
-        std::cout<<nome<<std::endl;
-    }
 
+int doubleGame(int x){
+    return x * 2;
+}
+    
     int main(){
 
-        minhafuncao("Danielly");
-        minhafuncao("Nome");
+        for(int i = 1; i <=5; i++){
+            std::cout<<"O dobro de "<<i<<" é "<<doubleGame(i)<<std::endl;
+        }
     
     return 0;
 }
