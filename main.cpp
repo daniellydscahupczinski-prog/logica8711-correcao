@@ -1,65 +1,67 @@
 #include<iostream>
 
-int main(){
+float somar (float a, float b){
+    return a + b;
 
-    int num1, num2, soma, subt, mult;
-    float div;
+}
+float subtrair (float a, float b ){
+    return a - b;
+}
+float multiplicar (float a, float b){
+    return a * b;
+}
+float dividir (float a, float b){
+    if (b == 0){
+        std::cout<<"Nao é possiveldividir por 0"<<std::endl;
+        return 0;
+    }else{
+    return a / b;
+}
+}
+void coletarNumeros (float &a, float &b){
+    std::cout<<"Digite um valor para a: "<<std::endl;
+    std::cin>>a;
+
+    std::cout<<"Digite um valor para b: "<<std::endl;
+    std::cin>>b;
+
+}
+
+void exibirResultado(float &a, float &b){
+    coletarNumeros (a, b);
+
     int op;
-
-    std::cout<<"Digite aqui o valor para numero 1: "<<std::endl;
-    std::cin>>num1;
-
-    std::cout<<"Digite aqui o valor para numero 2: "<<std::endl;
-    std::cin>>num2;
-
-    std::cout<<"---- Escolha a operação -----"<<std::endl;
-    std::cout<<" 1 - Soma";
-    std::cout<<" 2 - Subtração";
-    std::cout<<" 3 - Multiplicação";
-    std::cout<<" 4 - Divisão";
+    std::cout<<"Digite uma opçao: "<<std::endl;
+    std::cout<<" 1 - somar"<<std::endl;
+    std::cout<<" 2 - subtrair"<<std::endl;
+    std::cout<<" 3 - multiplicar"<<std::endl;
+    std::cout<<" 4 - dividir"<<std::endl;
     std::cin>>op;
 
-    switch (op){
+    switch(op){
         case 1:
-        soma = num1 + num2;
-        std::cout<<"O resultado da soma é"<<soma<<std::endl;
+        std::cout<<"O resultado é: "<<somar(a, b)<<std::endl;
         break;
 
         case 2:
-        subt = num1 - num2;
-        std::cout<<"O resultado da substração é: "<<subt<<std::endl;
+        std::cout<<"O resultado é: "<<subtrair(a, b)<<std::endl;
         break;
 
         case 3:
-        mult = num1 * num2;
-        std::cout<<"O resultado da multiplicação é: "<<subt<<std::endl;
+        std::cout<<"O resultado é: "<<multiplicar(a, b)<<std::endl;
         break;
 
         case 4:
-        div = num1 / num2;
-        std::cout<<"O resultado da divisão é: "<<div<<std::endl;
+        std::cout<<"O resultado é:"<<dividir(a, b)<<std::endl;
         break;
 
         default:
-        std::cout<<"Voce não inseriu nenhum valor valido"<<std::endl; 
-
-
-
-
-
-
-        
+        std::cout<<"Voce digitou um valor invalido"<<std::endl;
     }
+}
+int main(){
 
-    
-    
-   
-    
-
-    
-    
-    
-    
-
+    float num1 = 0, num2 = 0;
+    exibirResultado(num1, num2);
     return 0;
 }
