@@ -76,25 +76,25 @@ int main()
         case 1:
             valorCurso = 3555.00;
             parcelas = 22;
-            std::cout << "O valor do curso de RH é de R$3.555,00 em até 22x" << std::endl;
+            std::cout << "O valor do curso de RH e de R$3.555,00 em ate 22x" << std::endl;
             break;
 
         case 2:
             valorCurso = 3751.00;
             parcelas = 22;
-            std::cout << "O valor do curso de Logistica é de R$3.751,00 em até 22x" << std::endl;
+            std::cout << "O valor do curso de Logistica e de R$3.751,00 em ate 22x" << std::endl;
             break;
 
         case 3:
             valorCurso = 3355.00;
             parcelas = 22;
-            std::cout << "O valor do curso de Contabilidade é de R$3.355,00 em até 22x" << std::endl;
+            std::cout << "O valor do curso de Contabilidade e de R$3.355,00 em ate 22x" << std::endl;
             break;
 
         case 4:
             valorCurso = 3157.00;
             parcelas = 22;
-            std::cout << "O valor do curso de Transações Imobiliarias é de R$3.157,00 em até 22x" << std::endl;
+            std::cout << "O valor do curso de Transações Imobiliarias e de R$3.157,00 em ate 22x" << std::endl;
             break;
 
         default:
@@ -118,19 +118,19 @@ int main()
         case 1:
             valorCurso = 14405.49;
             parcelas = 30;
-            std::cout << "O valor do curso de TDS é de R$14.405,49 em até 30x" << std::endl;
+            std::cout << "O valor do curso de TDS e de R$14.405,49 em ate 30x" << std::endl;
             break;
 
         case 2:
             valorCurso = 15279.00;
             parcelas = 40;
-            std::cout << "O valor do curso de Tecnico em Enfermagem é de R$15.279,00 em até 40x" << std::endl;
+            std::cout << "O valor do curso de Tecnico em Enfermagem e de R$15.279,00 em ate 40x" << std::endl;
             break;
 
         case 3:
             valorCurso = 14844.79;
             parcelas = 28;
-            std::cout << "O valor do curso de Tecnico em Modelagem é de R$14.844,79 em até 28x" << std::endl;
+            std::cout << "O valor do curso de Tecnico em Modelagem e de R$14.844,79 em ate 28x" << std::endl;
             break;
 
         default:
@@ -158,7 +158,7 @@ int main()
     {
         desconto = valorCurso * 0.90;
 
-        std::cout << "O valor total com desconto é de R$"
+        std::cout << "O valor total com desconto e de R$"
                   << desconto << std::endl;
     }
 
@@ -166,13 +166,13 @@ int main()
     {
         desconto = valorCurso * 0.94;
 
-        std::cout << "O valor total com desconto é de R$"
+        std::cout << "O valor total com desconto e de R$"
                   << desconto << std::endl;
     }
 
     else if (opçaoPagamento == 1)
     {
-        std::cout << "O valor total é de R$"
+        std::cout << "O valor total e de R$"
         << valorCurso
         << " em ate "
                   << parcelas
@@ -185,7 +185,7 @@ int main()
         std::cout << "Opçao de pagamento invalida" << std::endl;
     }
 
-    std::cin.ignore();
+1    std::cin.ignore();
 
     cadastro();
 
