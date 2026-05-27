@@ -1,15 +1,15 @@
 #include<iostream>
 
-void imprimirAteN(int n){
-     for(int i = 1; i <= n; i++){
-  }
+int main (){
+
+    int numeros[5];
+    int soma = 0;
+
+    for(int i = 0; i <= 4; i++){ 
+    std::cout<<"Digite o numero: "<<(i +1)<<": ";
+    std::cin>>numeros[i];
+    soma += numeros[i];
  }
-int main(){
 
-   int numero;
-   std::cout<<"Digite um numero: "<<std::endl;
-   std::cin>>numero;
-    imprimirAteN(numero);
-
-   return 0;
-}    
+    std::cout<<"Soma: "<<soma<<std::endl;
+}
