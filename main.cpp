@@ -1,18 +1,16 @@
 #include<iostream>
 
-int main(){
-    int fibonacci[10];
+void contar(int numero){
+    if(numero == 0){
+    std::cout<<"pare\n";
+    return;
+     }
+    std::cout<<numero<<"\n";
 
-    fibonacci[0] = 1; // O fibonacci sempre acrescenta o proximo numero com o numero anterior
-    fibonacci[1] = 1;
+    contar(numero - 1);
+ }
+    int main(){
+        contar(5);
 
-    for(int i = 2; i < 10; i++){
-        fibonacci[i] = fibonacci[i-1] + fibonacci[i-2];
+        return 0;
     }
-
-    for(int i = 0; i < 10; i++){
-        std::cout<<fibonacci[i]<<"\n";
-    }
-
-    return 0;
-}
