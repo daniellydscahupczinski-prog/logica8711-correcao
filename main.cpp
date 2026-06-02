@@ -1,31 +1,13 @@
 #include<iostream>
-#include<cctype>
 
-bool ehpalindromo(std::string s, int inicio, int fim){
-    if(inicio >= fim){
-        return true;
-    }
-    if(s[inicio] != s[fim]){
-        return false;
-    }
-    return ehpalindromo(s, inicio +1, fim -1);
+
+int main(){
+
+    int numero = 42;
+    int* ptr = &numero;
+
+    std::cout<<"Acessar via variavel: "<<numero<<std::endl;
+    std::cout<<"Acessar via ponteiro: "<<*ptr<<std::endl;
+
+    return 0;
 }
-
-    int main(){
-
-        std::string palavra; 
-
-        std::cout<<"Digite uma palavra"<<std::endl;
-        std::cin>>palavra;
-        
-        for(char &c : palavra){
-            c = std::tolower(c);
-        }
-
-        if(ehpalindromo(palavra, 0, palavra.length() -1)){
-            std::cout<<"É palindromo!"<<std::endl;
-        }else{
-            std::cout<<"Nao e palindromo"<<std::endl;
-        }
-        return 0;
-    }
