@@ -185,7 +185,7 @@ int main()
         std::cout << "Opçao de pagamento invalida" << std::endl;
     }
 
-1    std::cin.ignore();
+   std::cin.ignore();
 
     cadastro();
 
