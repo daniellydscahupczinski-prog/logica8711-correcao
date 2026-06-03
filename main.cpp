@@ -1,18 +1,23 @@
 #include<iostream>
 #include<string>
 
-struct pessoa{
+struct Aluno{
     std::string nome;
-    int idade;
-    float altura;
-};
+    float nota;};
 
-int main(){
+    int main(){
 
-    pessoa p1 = {"Junior", 20, 1.80};
-    pessoa p2 = {"Carlos", 30, 1.70};
+    
+    Aluno alunos[3]={
+        {"Henrique", 8.5},
+        {"Paula", 9.0},
+        {"Juliana", 7.0}
+    };
 
-    std::cout<<p1.nome<<" tem "<<p1.idade<<" anos "<<" e mede "<<p1.altura<<"m"<<std::endl;
+    for(int i = 0; i < 3; i++){
+        std::cout<<alunos[i].nome<<": "<<alunos[i].nota<<std::endl;
+    }
 
     return 0;
-}
+    
+    }
