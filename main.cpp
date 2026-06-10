@@ -1,95 +1,173 @@
-#include<iostream>
-#include<string>
+#include <iostream>
+#include <string>
 
-struct Tarefa{
-    int id; //numero identificador 
-    std::string descricao; //texto da tarefa
-    bool concluida; //true or false 
+struct Produto {
+    int id;
+    std::string nome;
+    float preco;
+    int quantidade;
 };
 
-Tarefa tarefas[50];
-int totalTarefas = 0;
+Produto produtos[100];
+int totalProdutos = 0;
 
-void adicionar(){
-    std::cout<<"\n --- Adicionar tarefas ----"<<std::endl;
-
-    std::cout<<"ID: ";
-    std::cin>>tarefas[totalTarefas].id;
-
-    std::cin.ignore();
-    std::cout<<"Descricao: ";
-    std::getline(std::cin, tarefas[totalTarefas].descricao);
-
-    tarefas[totalTarefas].concluida = false;
-
-    totalTarefas++;
-    std::cout<<"Tarefa adicionada"<<std::endl;
-}
-
-void listar(){
-    if(totalTarefas == 0){
-        std::cout<<"\n Nenhuma tarefa!"<<std::endl;
+void adicionarProduto() {
+    if (totalProdutos >= 100) {
+        std::cout << "Limite de produtos atingido!" << std::endl;
         return;
     }
+    
+    std::cout << "\n--- Adicionar Produto ---" << std::endl;
+    
+    std::cout << "ID: ";
+    std::cin >> produtos[totalProdutos].id;
+    
+    std::cin.ignore();
+    std::cout << "Nome: ";
+    std::getline(std::cin, produtos[totalProdutos].nome);
+    
+    std::cout << "Preço: ";
+    std::cin >> produtos[totalProdutos].preco;
+    
+    std::cout << "Quantidade: ";
+    std::cin >> produtos[totalProdutos].quantidade;
+    
+    totalProdutos++;
+    
+    std::cout << "Produto adicionado com sucesso!" << std::endl;
+}
 
-    std::cout<<"\n --- tarefas ---- "<<std::endl;
-    for(int i = 0; i < totalTarefas; i++){
-        std::string status = tarefas[i].concluida ? "S": "N" ;
-        std::cout<<"["<<status<<"]"<<tarefas[i].id<<" - "
-        <<tarefas[i].descricao<<std::endl;
+void exibirProdutos() {
+    if (totalProdutos == 0) {
+        std::cout << "\nNenhum produto cadastrado!" << std::endl;
+        return;
+    }
+    
+    std::cout << "\n--- Lista de Produtos ---" << std::endl;
+    std::cout << "ID | Nome | Preço | Quantidade" << std::endl;
+    std::cout << "---+------+-------+------------" << std::endl;
+    
+    for (int i = 0; i < totalProdutos; i++) {
+        std::cout << produtos[i].id << " | "
+                  << produtos[i].nome << " | R$ "
+                  << produtos[i].preco << " | "
+                  << produtos[i].quantidade << std::endl;
     }
 }
-void marcarConcluida(){
-    int idBuscado;
-    std::cout<<"\n ID da tarefa: ";
-    std::cin>>idBuscado;
 
-    for(int i = 0 ; i < totalTarefas; i++){
-        if(tarefas[i].id == idBuscado){
-            tarefas[i].concluida = true;
-            std::cout<<"Marcada como concluida"<<std::endl;
+void buscarProduto() {
+    if (totalProdutos == 0) {
+        std::cout << "\nNenhum produto cadastrado!" << std::endl;
+        return;
+    }
+    
+    int idBuscado;
+    std::cout << "\nDigite o ID do produto: ";
+    std::cin >> idBuscado;
+    
+    for (int i = 0; i < totalProdutos; i++) {
+        if (produtos[i].id == idBuscado) {
+            std::cout << "\n--- Produto Encontrado ---" << std::endl;
+            std::cout << "ID: " << produtos[i].id << std::endl;
+            std::cout << "Nome: " << produtos[i].nome << std::endl;
+            std::cout << "Preço: R$ " << produtos[i].preco << std::endl;
+            std::cout << "Quantidade: " << produtos[i].quantidade << std::endl;
             return;
         }
     }
-    std::cout<<"Tareda nao encontrada!"<<std::endl;
+    
+    std::cout << "\nProduto não encontrado!" << std::endl;
 }
 
-void menu(){
-    std::cout<<"\n === TODOS LIST ==="<<std::endl;
-    std::cout<<"1. Adicionar"<<std::endl;
-    std::cout<<"2. Listar "<<std::endl;
-    std::cout<<"3. Marcar concluida"<<std::endl;
-    std::cout<<"4. sair "<<std::endl;
-    std::cout<<"Escolha: "<<std::endl;
-}
-int main (){
-
-    int opcao;
-
-    while (true){
-        menu();
-        std::cin>>opcao;
-
-        switch(opcao){
-            case 1:
-                adicionar();
-                break;
-            
-            case 2:
-                listar();
-                break;
-            
-            case 3:
-                marcarConcluida();
-                break;
-
-            case 4:
-                std::cout<<"Ate logo"<<std::endl;
-                return 0;
-            default:
-                std::cout<<"Opcao invalida"<<std::endl;
+void atualizarQuantidade() {
+    if (totalProdutos == 0) {
+        std::cout << "\nNenhum produto cadastrado!" << std::endl;
+        return;
+    }
+    
+    int idBuscado;
+    std::cout << "\nDigite o ID do produto: ";
+    std::cin >> idBuscado;
+    
+    for (int i = 0; i < totalProdutos; i++) {
+        if (produtos[i].id == idBuscado) {
+            std::cout << "Quantidade atual: " << produtos[i].quantidade << std::endl;
+            std::cout << "Nova quantidade: ";
+            std::cin >> produtos[i].quantidade;
+            std::cout << "Atualizado com sucesso!" << std::endl;
+            return;
         }
     }
-    return 0;
+    
+    std::cout << "\nProduto não encontrado!" << std::endl;
 }
 
+void deletarProduto() {
+    if (totalProdutos == 0) {
+        std::cout << "\nNenhum produto cadastrado!" << std::endl;
+        return;
+    }
+    
+    int idBuscado;
+    std::cout << "\nDigite o ID do produto a deletar: ";
+    std::cin >> idBuscado;
+    
+    for (int i = 0; i < totalProdutos; i++) {
+        if (produtos[i].id == idBuscado) {
+            for (int j = i; j < totalProdutos - 1; j++) {
+                produtos[j] = produtos[j + 1];
+            }
+            totalProdutos--;
+            std::cout << "Produto deletado com sucesso!" << std::endl;
+            return;
+        }
+    }
+    
+    std::cout << "\nProduto não encontrado!" << std::endl;
+}
+
+void exibirMenu() {
+    std::cout << "\n========== MENU ==========" << std::endl;
+    std::cout << "1. Adicionar produto" << std::endl;
+    std::cout << "2. Exibir produtos" << std::endl;
+    std::cout << "3. Buscar produto" << std::endl;
+    std::cout << "4. Atualizar quantidade" << std::endl;
+    std::cout << "5. Deletar produto" << std::endl;
+    std::cout << "6. Sair" << std::endl;
+    std::cout << "========================" << std::endl;
+    std::cout << "Escolha uma opção: ";
+}
+
+int main() {
+    int opcao;
+    
+    while (true) {
+        exibirMenu();
+        std::cin >> opcao;
+        
+        switch (opcao) {
+            case 1:
+                adicionarProduto();
+                break;
+            case 2:
+                exibirProdutos();
+                break;
+            case 3:
+                buscarProduto();
+                break;
+            case 4:
+                atualizarQuantidade();
+                break;
+            case 5:
+                deletarProduto();
+                break;
+            case 6:
+                std::cout << "\nAté logo!" << std::endl;
+                return 0;
+            default:
+                std::cout << "\nOpção inválida!" << std::endl;
+        }
+    }
+    
+    return 0;
+}
