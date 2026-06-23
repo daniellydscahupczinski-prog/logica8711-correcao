@@ -1,25 +1,56 @@
 #include<iostream>
 
 int main(){
-    int fila[5];
-    int inicio = 0;
-    int fim = 0;
 
-    std::cout<<"==== FILA ===="<<std::endl;
-    std::cout<<std::endl;
+    int pilha[10]; // temos 10 indices disponiveis
+    int topo = -1; // -1 quer dizer que nao existe nenhum indice valido AINDA
+     // o topo vira o inidice onde o ultimo numero foi colocado
+    int opcao;
 
-    fila[0] = 100;
-    fila[1] = 200;
-    fila[2] = 300;
-    fim = 3;
+    std::cout<<"==== PILHA COM MENU ===="<<std::endl;
 
-    std::cout<<"Elementos enfileirados: 100, 200, 300"<<std::endl;
-    std::cout<<std::endl;
+    while(true){
+        std::cout<<std::endl;
+        std::cout<<"1. Empilhar"<<std::endl;
+        std::cout<<"2. Desempilhar"<<std::endl;
+        std::cout<<"3. Exibir pilha"<<std::endl;
+        std::cout<<"4. Sair"<<std::endl;
+        std::cout<<"Escolha"<<std::endl;
+        std::cin>>opcao;
 
-    std::cout<<"Desenfileirando..."<<std::endl;
-    while(inicio < fim){
-        std::cout<<"Removido: "<<fila[inicio]<<std::endl;
-        inicio++;
+        if(opcao ==1){
+            if(topo < 9){
+                int valor;
+                std::cout<<"Digite o valor: ";
+                std::cin>>valor;
+                topo++;
+                pilha[topo];
+                std::cout<<"Empilhado!"<<std::endl;
+            }else{
+                std::cout<<"Pilha cheia!"<<std::endl;
+            }
+        }
+        else if(opcao == 2){
+            if(topo >= 0){
+                std::cout<<"Removido "<<pilha[topo]<<std::endl;
+                topo--;
+            }else{
+                std::cout<<"Pilha vazia!"<<std::endl;
+            }
+        }
+        else if(opcao == 3){
+            if(topo >= 0){
+                std::cout<<"Pilha: ";
+                for(int i = 0; i <= topo; i++){
+                    std::cout<<pilha[i]<<" ";
+                }
+                std::cout<<std::endl;
+            }
+        }
+        else if(opcao == 4){
+            std::cout<<"Saindo..."<<std::endl;
+            break;
+        }
     }
     return 0;
 }
