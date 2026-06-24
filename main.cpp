@@ -2,10 +2,11 @@
 
 int main(){
 
-    int numeros[] = {1,2,3,2,4,5,3,6};
+    int numeros[] = {10,20,30,40,50,60,70,80};
     int tamanho = 8;
+    int buscado;
 
-    std::cout<<"==== NUMEROS DUPLICADOS ==== "<<std::endl;
+    std::cout<<"==== BUSCAR NUMERO ===="<<std::endl;
     std::cout<<std::endl;
 
     std::cout<<"Array: ";
@@ -14,14 +15,23 @@ int main(){
     }
     std::cout<<std::endl;
 
-    std::cout<<"Numeros duplicados: "<<std::endl;
+    std::cout<<"Digite o numero a buscar: ";
+    std::cin>>buscado;
+
+    int posicao = -1;
+
     for(int i = 0; i < tamanho; i++){
-        for(int j = i + 1; j < tamanho; j++){
-            if(numeros[i] == numeros[j]){
-                std::cout<<numeros[i]<<" Aparece mais de uma vez"<<std::endl;
-                break;
-            }
+        if(numeros[i] == buscado){
+            posicao = i;
+            break;
         }
+    }
+
+    std::cout<<std::endl;
+    if(posicao != -1){
+        std::cout<<"Encontrado na posicao"<<posicao<<std::endl;
+    }else{
+        std::cout<<"Nao encontrado!"<<std::endl;
     }
     return 0;
 }
