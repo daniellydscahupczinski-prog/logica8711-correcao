@@ -60,18 +60,82 @@ int main(){
 
 #include<iostram>
 
-    int numeros[] = {100,200,300,400,500};
-    int tamanho = 5;
-    int somarTotal(int numeros[], int tamanho){
-        if(tamanho == 0){
-            return numeros[100];
-        }
-        return numeros[tamanho] + somarTotal(numeros, tamanho -1);
-    }
-
     int main(){
-        int 
+
+        int numeros[5];
+        int soma = 0;
+
+        std::cout<<"==== 2. Soma simples ===="<<std::endl;
+
+        for(int i = 0; i < 5; i++){
+            std::cout<<"Digite o numero "<<( i + 1)<<":";
+            std::cin>>numeros[i];
+            soma += numeros[i];
+        }
+
+        std::cout<<std::endl;
+        std::cout<<"Soma total: "<<soma<<std::endl;
+        return 0;
     }
 
+#include<iostream>
+    int encontrarMaior(int* arr, int tamanho){
+        int maior = arr[0];
 
+        for(int i = 0; i < tamanho; i++){
+            if(arr[i] > maior ){
+                maior = arr[i];
+            }
+        }
+        return maior;
+    }
+    int main(){
+        int arr[] = {2, 4, 6, 8, 10};
+        std::cout<<"Maior numero: "<<encontrarMaior(arr, 5)<<std::endl;
+    }
+
+//ex 4
+#include<iostream>
+int encontrarMenor(int* arr, int tamanho ){
+    int Menor = arr[0];
+
+    for(int i = 0; i < tamanho; i++){
+        if(arr[i] < Menor){
+            Menor = arr[i]
+        }
+    }
+    return menor;
+}
+    int main(){
+        int arr[] = {2, 4, 6, 8, 10};
+        std::cout<<"Menor numero: "<<encontrarMenor(arr, 5)<<std::endl;
+    }
+
+//ex5
+#include<iostream>
+int main(){
+    int numero;
+    int soma = 0;
+
+    for(int i = 0; i < 5; i++){
+
+        std::cout<<"Digite um numero: "<<std::endl;
+        std::cin>>numero;
+
+    soma = soma + numero;
+    }
+    int media = soma / 5;   
+    std::cout<<"A media dos numeros é de:"<<media<<std::endl;}
+
+//ex6
+#include<iostream>
+    int main(){
+        int numeros = {10, 20, 30, 40, 50, 60, 70, 80, 90, 100};
+        int tamanho = 10;
+
+        for(int i = 0; i < 10; i++){
+
+           
+        }
+    }
 
