@@ -58,7 +58,7 @@ int main(){
     return 0;
 }
 
-#include<iostram>
+#include<iostream>
 
     int main(){
 
