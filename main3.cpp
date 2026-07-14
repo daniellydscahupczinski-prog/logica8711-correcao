@@ -1,22 +1,19 @@
 #include<iostream>
 #include<cmath>
 
+int main(){
 
-  int calcularCubo(int num){
-    return static_cast<int>(std::pow(num, 3)); //pow eleva o que voce eleva, no caso o numero que voce coloca ali
-  }
+  const double pi = 3.14; //const quer dizer que o valor nao vai mudar
 
-  int main(){
+  double area;
+  int raio;
+  std::cout<<"Digite o valor do raio do circulo"<<std::endl;
+  std::cin>>raio;
 
-    int a;
-
-    std::cout<<"DIgite um numero inteiro: ";
-    std::cin>>a;
-
-    int cubo = calcularCubo(a);
-
-    std::cout<<"O cubo de"<<a<<" é: "<<cubo<<std::endl;
-  
+  area = pi * (raio * raio);
+  std::cout<<"A area do circulo é"<<area<<std::endl;
 
   return 0;
+
 }
+  
