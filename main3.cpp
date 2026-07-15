@@ -1,19 +1,12 @@
 #include<iostream>
-#include<cmath>
+
 
 int main(){
 
-  const double pi = 3.14; //const quer dizer que o valor nao vai mudar
+  std::cout<<"Numeros pares de 1 até 20: "<<std::endl;
 
-  double area;
-  int raio;
-  std::cout<<"Digite o valor do raio do circulo"<<std::endl;
-  std::cin>>raio;
-
-  area = pi * (raio * raio);
-  std::cout<<"A area do circulo é"<<area<<std::endl;
-
+  for(int i = 2; i <= 20; i+=2){
+    std::cout<<i<<" "<<std::endl;
+  }
   return 0;
-
 }
-  
